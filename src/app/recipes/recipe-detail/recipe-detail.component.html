@@ -4,7 +4,7 @@
       [src]="selectedRecipe.imagePath"
       [alt]="selectedRecipe.name"
       class="img-responsive"
-      style="max-height: 300">
+      style="max-height: 300px">
   </div>
 </div>
 <div class="row">
@@ -21,7 +21,7 @@
         Manage Recipe <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">To Shopping List</a></li>
+        <li><a href="#" (click)="addRecipeToShoppingList()">To Shopping List</a></li>
         <li><a href="#">Edit Recipe</a></li>
         <li><a href="#">Delete Recipe</a></li>
       </ul>
@@ -35,7 +35,9 @@
   </div>
   <div class="row">
     <div class="col-xs-12">
-      Ingredients
+      <ul *ngFor="let ingredient of selectedRecipe.ingredients">
+        <li>{{ingredient.name}}-{{ingredient.amount}}</li>
+      </ul>
     </div>
   </div>
 </div>
