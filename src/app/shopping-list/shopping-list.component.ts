@@ -21,8 +21,4 @@ export class ShoppingListComponent implements OnInit {
       }
     )
   }
-
-  onIngredientAdded(ingredient: Ingredient) {
-    this.shoppingListService.addIngredient(ingredient);
-  }
 }
