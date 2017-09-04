@@ -17,13 +17,10 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(
       (p: Params) => {
-        const recipeName = p["name"];
-        this.selectedRecipe = this.recipeService.getRecipes().find(
-          (r: Recipe) => {
-            return r.name === recipeName;
-          }
-        );
-        console.log(':id is --', p['name']);
+        const recipeIndex = +p["id"];
+        console.log(':id is --', p['id']);
+        this.selectedRecipe = this.recipeService.getRecipes()[recipeIndex];
+        
       }
     );
   }
