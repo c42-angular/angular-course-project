@@ -19,6 +19,10 @@ export class ShoppingListComponent implements OnInit {
       (ingredients: Ingredient[]) => {
         this.ingredients = ingredients;
       }
-    )
+    );
+  }
+
+  onEditStart(index: number) {
+    this.shoppingListService.startedEditing.next(index);
   }
 }
