@@ -27,4 +27,9 @@ export class ShoppingListService {
           this.ingredients.push(...ingredients);
           this.ingredientAdded.emit(this.getIngredients());
       }
+
+      updateIngredient(index: number, newIngredient: Ingredient) {
+        this.ingredients[index] = newIngredient;
+        this.ingredientAdded.emit(this.getIngredients());
+      }
 }
