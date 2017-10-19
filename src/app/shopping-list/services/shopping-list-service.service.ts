@@ -32,4 +32,9 @@ export class ShoppingListService {
         this.ingredients[index] = newIngredient;
         this.ingredientAdded.emit(this.getIngredients());
       }
+
+      deleteIngredient(index: number) {
+        this.ingredients.splice(index, 1);
+        this.ingredientAdded.emit(this.getIngredients());
+      }
 }
