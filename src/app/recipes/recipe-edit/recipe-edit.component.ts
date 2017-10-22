@@ -57,7 +57,7 @@ export class RecipeEditComponent implements OnInit {
     });
   }
 
-  onSubmit(){
+  onSubmit() {
     const newRecipe = new Recipe(
       this.recipeForm.value['name'],
       this.recipeForm.value['description'],
@@ -72,11 +72,11 @@ export class RecipeEditComponent implements OnInit {
     }
   }
 
-  onCancel(){
+  onCancel() {
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
-  onAddIngredient(){
+  onAddIngredient() {
     (<FormArray>this.recipeForm.get('ingredients')).push(
       new FormGroup({
         'name': new FormControl(null, Validators.required),
