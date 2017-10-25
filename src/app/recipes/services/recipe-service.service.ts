@@ -34,6 +34,11 @@ export class RecipeService {
 
       recipeChanged = new Subject <Recipe[]>();
 
+      setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipeChanged.next(this.getRecipes());
+      }
+
       getRecipes() {
           // return a copy of the array to keep data secure
           return this.recipes.slice();
