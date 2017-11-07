@@ -2,7 +2,7 @@ import * as firebase from 'firebase';
 import { Response } from '@angular/http';
 
 export class AuthService {
-  token = '';
+  token = null;
   // firebase module initialised in app.component
   signup(email: string, password: string) {
     firebase.auth().createUserWithEmailAndPassword(email, password)
@@ -23,5 +23,9 @@ export class AuthService {
       .then((token: string) => this.token = token);
 
     return this.token;
+  }
+
+  isAuthenticated() {
+    return this.token != null;
   }
 }
