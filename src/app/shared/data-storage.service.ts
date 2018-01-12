@@ -20,7 +20,7 @@ export class DataStorageService {
   retrieveRecipes() {
     this.httpClient.get('https://ng-recipe-book-store.firebaseio.com/recipes.json?auth='
                   + this.authService.getToken(), {
-                    observe: 'response',
+                    observe: 'body',
                     responseType: 'text'
                   })
       .map(
